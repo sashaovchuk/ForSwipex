@@ -1,0 +1,155 @@
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(34, 32, 32);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+#main-login {
+    display: block;
+}
+
+.header-login, #main-login {
+    margin: 0 auto;
+}
+
+p {
+    color: rgb(90, 90, 90);
+}
+
+#logOut {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-name {
+    width: 75px;
+    margin-bottom: 0;
+}
+
+.tasks {
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+}
+
+.inRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-name {
+    width: 50%;
+}
+
+.add {
+    width: 26%;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+td {
+    vertical-align: middle;
+    border-color: white;
+    border-width: 0;
+}
+
+tr button {
+    width: 100px;
+}
+
+.activet {
+    background-color: red;
+}
+
+.comments {
+    height: 100vh;
+}
+
+.main-tasks, .main-comments {
+    width: 100%;
+    min-height: 350px;
+    margin: 30px auto;
+}
+
+.main-tasks {
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 2px lightgrey;
+}
+
+.comment-list {
+    width: 90%;
+    min-height: 400px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 2px lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-comment {
+    width: calc(100% - 60px);
+    float: right;
+    position: relative;
+}
+
+.comm {
+    min-width: calc(100% - 60px);
+    min-height: 60px;
+    text-align: justify;
+}
+
+.comm::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 7px;
+    left: -60px;
+    background-color: orange;
+}
+
+.imageForArea {
+    width: 100%;
+    float: right;
+    position: relative;
+}
+
+.imageForArea::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    background-color: rgb(182, 182, 182);
+}
+
+#area {
+    width: calc(100% - 60px);
+    float: right;
+    resize: none;
+}

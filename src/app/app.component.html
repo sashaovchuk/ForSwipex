@@ -1,0 +1,73 @@
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 login">
+        <div class="header-login">
+          <h1>DAIRY APP</h1>
+          <p>Comment with no sense</p>
+        </div>
+        <div id="main-login">
+          <label for="login">Log In</label>
+          <input type="text" [(ngModel)]="log" name="log" class="form-control" id="login">
+          <label for="pass">Password</label>
+          <input type="password" [(ngModel)]="pass" name="pass" class="form-control" id="pass">
+          <div class="mt-2">
+            <button type="button" (click)="logIn()" class="btn btn-primary">Log In</button>
+            <button type="button" (click)="cancel()" class="btn btn-primary ml-5">Cancel</button>
+          </div>
+          <p *ngIf="rememberLog===undefined" [ngClass]="rememberLog===undefined? 'text-danger' : 'text-success'">Wrong
+            login or pass</p>
+        </div>
+        <div class="footer-login mb-2">
+          <div *ngIf="checker===false" id="logOut">
+            <p class="user-name">{{rememberLog}}</p>
+            <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 tasks">
+        <div class="main-tasks">
+          <h3>Items</h3>
+          <div class="form-group inRow">
+            <div class="task-name">
+              <input type="text" [readonly]="checker" [(ngModel)]="taskName" name="taskName" class="form-control"
+                placeholder="type name here">
+            </div>
+            <div class="add">
+              <button type="button" (click)="addNewTask()" [disabled]="checker" class="btn btn-success">Add new</button>
+            </div>
+          </div>
+          <div class="task-list">
+            <table class="table table-hover">
+              <tbody>
+                <tr *ngFor="let task of tasks; let i=index" (click)="showComments(task)">
+                  <td>{{task.taskName}}</td>
+                  <td>{{task.comments.length}}</td>
+                  <td><button type="button" [disabled]="checker" class="form-control text-danger border-danger"
+                      (click)="deleteTask(task)">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 comments">
+        <div class="main-comments">
+          <div class="comment-list">
+            <div class="about-comment">
+              <h3>Comments #{{commentNumber}}</h3>
+              <div *ngFor="let task of comments; let i=index" class="user-comment">
+                <p class="comm">{{task}}</p>
+              </div>
+            </div>
+            <div class="imageForArea">
+              <textarea id="area" [(ngModel)]="newComment" name="newComment" [disabled]="checker===true" cols="30"
+                rows="4"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet></router-outlet>
